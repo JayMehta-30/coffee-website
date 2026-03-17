@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { CoffeeProduct } from '@/data/products';
+import { useRouter } from 'next/navigation';
 
 interface ProductCardProps {
     product: CoffeeProduct;
@@ -9,6 +10,8 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product, index }: ProductCardProps) {
+    const router = useRouter();
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -47,6 +50,7 @@ export default function ProductCard({ product, index }: ProductCardProps) {
                     {product.price}
                 </span>
                 <motion.button
+                    onClick={() => router.push('/takeaway')}
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F9C8F] to-[#3D8B7F] flex items-center justify-center hover:shadow-lg hover:shadow-[#4F9C8F]/40 transition-shadow"

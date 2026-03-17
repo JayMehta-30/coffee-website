@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 
 export type CartItem = {
     id: string; // Combine product id + customizations for unique key
@@ -48,7 +48,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         localStorage.setItem('coffeemania_cart', JSON.stringify(items));
     }, [items]);
 
-    const addToCart = (newItem: CartItem) => {
+    const addToCart = useCallback((newItem: CartItem) => {
         setItems(prevItems => {
             const existingItemIndex = prevItems.findIndex(i => i.id === newItem.id);
             if (existingItemIndex > -1) {
@@ -59,21 +59,21 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
             return [...prevItems, newItem];
         });
         setIsCartOpen(true);
-    };
+    }, []);
 
-    const removeFromCart = (id: string) => {
+    const removeFromCart = useCallback((id: string) => {
         setItems(prevItems => prevItems.filter(item => item.id !== id));
-    };
+    }, []);
 
-    const updateQuantity = (id: string, quantity: number) => {
+    const updateQuantity = useCallback((id: string, quantity: number) => {
         setItems(prevItems => 
             prevItems.map(item => 
                 item.id === id ? { ...item, quantity: Math.max(1, quantity) } : item
             )
         );
-    };
+    }, []);
 
-    const clearCart = () => setItems([]);
+    const clearCart = useCallback(() => setItems([]), []);
 
     const totalItems = items.reduce((total, item) => total + item.quantity, 0);
     const totalPrice = items.reduce((total, item) => total + (item.price * item.quantity), 0);
