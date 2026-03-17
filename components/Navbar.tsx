@@ -4,10 +4,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Coffee } from 'lucide-react';
+import { Menu, X, Coffee, ShoppingBag } from 'lucide-react';
+import { useCart } from '@/context/CartContext';
 
 const navLinks = [
     { name: 'Home', href: '/' },
+    { name: 'Takeaway', href: '/takeaway' },
     { name: 'Menu', href: '/menu' },
     { name: 'About Us', href: '/about' },
     { name: 'Gallery', href: '/gallery' },
@@ -18,6 +20,7 @@ const navLinks = [
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
+    const { totalItems, setIsCartOpen } = useCart();
 
     return (
         <nav className="fixed w-full z-50 bg-[#1A0F0A]/80 backdrop-blur-md border-b border-amber-900/30">
@@ -34,24 +37,52 @@ export default function Navbar() {
                     
                     {/* Desktop Menu */}
                     <div className="hidden md:block">
-                        <div className="ml-10 flex items-baseline space-x-8">
+                        <div className="ml-10 flex items-center space-x-8">
                             {navLinks.map((link) => {
                                 const isActive = pathname === link.href;
                                 return (
                                     <Link
                                         key={link.name}
                                         href={link.href}
-                                        className={`transition-colors text-sm font-medium tracking-wide ${isActive ? 'text-[#D4A574]' : 'text-amber-100/70 hover:text-white'}`}
+                                        className={`transition-colors text-sm font-medium tracking-wide ${
+                                            link.name === 'Takeaway' 
+                                                ? 'bg-[#D4A574]/10 text-[#D4A574] hover:bg-[#D4A574]/20 px-3 py-1.5 rounded-full border border-[#D4A574]/30' 
+                                                : isActive ? 'text-[#D4A574]' : 'text-amber-100/70 hover:text-white'
+                                        }`}
                                     >
                                         {link.name}
                                     </Link>
                                 );
                             })}
+                            
+                            {/* Cart Icon */}
+                            <button 
+                                onClick={() => setIsCartOpen(true)}
+                                className="relative p-2 text-amber-100/70 hover:text-white transition-colors group"
+                            >
+                                <ShoppingBag className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                {totalItems > 0 && (
+                                    <span className="absolute top-0 right-0 bg-[#D4A574] text-[#1A0F0A] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center transform translate-x-1/4 -translate-y-1/4">
+                                        {totalItems}
+                                    </span>
+                                )}
+                            </button>
                         </div>
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                    {/* Mobile Menu Button & Cart */}
+                    <div className="md:hidden flex items-center gap-4">
+                        <button 
+                            onClick={() => setIsCartOpen(true)}
+                            className="relative p-2 text-amber-100/70 hover:text-white transition-colors"
+                        >
+                            <ShoppingBag className="w-6 h-6" />
+                            {totalItems > 0 && (
+                                <span className="absolute top-0 right-0 bg-[#D4A574] text-[#1A0F0A] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center transform translate-x-1/4 -translate-y-1/4">
+                                    {totalItems}
+                                </span>
+                            )}
+                        </button>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
                             className="inline-flex items-center justify-center p-2 rounded-md text-amber-100/70 hover:text-white hover:bg-amber-900/30 focus:outline-none transition-colors"
@@ -84,7 +115,11 @@ export default function Navbar() {
                                         key={link.name}
                                         href={link.href}
                                         onClick={() => setIsOpen(false)}
-                                        className={`block w-full text-center px-3 py-4 rounded-md text-lg font-medium tracking-wide transition-colors ${isActive ? 'text-[#D4A574] bg-amber-900/20' : 'text-amber-100/70 hover:text-white hover:bg-amber-900/30'}`}
+                                        className={`block w-full text-center px-3 py-4 rounded-md text-lg font-medium tracking-wide transition-colors ${
+                                            link.name === 'Takeaway'
+                                                ? 'bg-[#D4A574]/20 border border-[#D4A574]/50 text-[#D4A574]'
+                                                : isActive ? 'text-[#D4A574] bg-amber-900/20' : 'text-amber-100/70 hover:text-white hover:bg-amber-900/30'
+                                        }`}
                                     >
                                         {link.name}
                                     </Link>

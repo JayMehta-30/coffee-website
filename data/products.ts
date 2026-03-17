@@ -3,6 +3,7 @@ export interface CoffeeProduct {
     name: string;
     description: string;
     price: string;
+    basePrice: number;
     rating: number;
     image: string;
     features: string[];
@@ -14,6 +15,7 @@ export const coffeeProducts: CoffeeProduct[] = [
         name: 'Cappuccino',
         description: 'Cappuccino is a latte made with more foam than steamed milk, often topped with cocoa powder.',
         price: '$3.50',
+        basePrice: 3.50,
         rating: 4.9,
         image: '/coffee/cappuccino.jpg',
         features: ['Espresso', 'Steamed Milk', 'Foam']
@@ -23,6 +25,7 @@ export const coffeeProducts: CoffeeProduct[] = [
         name: 'Latte',
         description: 'Latte is a coffee drink made with espresso and steamed milk. Rich, creamy, balanced.',
         price: '$4.00',
+        basePrice: 4.00,
         rating: 5.0,
         image: '/coffee/latte.jpg',
         features: ['Espresso', 'Steamed Milk', 'Light Foam']
@@ -32,6 +35,7 @@ export const coffeeProducts: CoffeeProduct[] = [
         name: 'Mocha',
         description: 'Mocha is a coffee beverage where dark espresso meets rich chocolate and creamy milk.',
         price: '$4.50',
+        basePrice: 4.50,
         rating: 4.7,
         image: '/coffee/mocha.jpg',
         features: ['Espresso', 'Chocolate', 'Steamed Milk']
