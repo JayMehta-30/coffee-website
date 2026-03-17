@@ -12,9 +12,12 @@ const playfair = Playfair_Display({
   variable: '--font-playfair'
 });
 
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
 export const metadata: Metadata = {
-  title: 'Artisan Coffee | Experience Excellence',
-  description: 'Premium coffee experiences crafted to perfection',
+  title: 'Coffeemania | Premium Artisan Coffee',
+  description: 'Experience excellence with our premium coffee blends and artisan atmosphere.',
 };
 
 export default function RootLayout({
@@ -23,8 +26,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} scroll-smooth`}>
+      <body className="bg-[#1A0F0A] text-amber-50 min-h-screen flex flex-col overflow-x-hidden">
+        <Navbar />
+        <main className="flex-grow pt-20">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   );
 }

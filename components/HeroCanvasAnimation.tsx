@@ -3,8 +3,8 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, useVelocity } from 'framer-motion';
 
-const TOTAL_FRAMES = 192; // Using the provided 192 frames
-const FRAME_PATH = '/frames'; // Folder containing frame_0.jpg to frame_191.jpg
+const TOTAL_FRAMES = 240; // High FPS 240 frames
+const FRAME_PATH = '/high_fps_frames'; // Upgraded folder
 
 export default function HeroCanvasAnimation() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -92,8 +92,8 @@ export default function HeroCanvasAnimation() {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
 
-                // Calculate scaling (contain fit logic as per prompt)
-                const scale = Math.min(
+                // Responsive full-cover sizing without losing the center subject
+                const scale = Math.max(
                     canvas.width / img.width,
                     canvas.height / img.height
                 );
