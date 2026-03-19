@@ -100,8 +100,14 @@ export default function TakeawayPage() {
                                     {/* Selectors */}
                                     <div className="space-y-4 mb-6">
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-amber-100/50 uppercase tracking-wider">Size</label>
+                                            <label 
+                                                htmlFor={`size-select-${product.id}`}
+                                                className="text-xs font-semibold text-amber-100/50 uppercase tracking-wider"
+                                            >
+                                                Size
+                                            </label>
                                             <select 
+                                                id={`size-select-${product.id}`}
                                                 value={selection.size}
                                                 onChange={(e) => handleSizeChange(product.id, e.target.value)}
                                                 className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-3 py-2 text-amber-50 focus:outline-none focus:border-[#D4A574] text-sm"
@@ -112,8 +118,14 @@ export default function TakeawayPage() {
                                             </select>
                                         </div>
                                         <div className="space-y-2">
-                                            <label className="text-xs font-semibold text-amber-100/50 uppercase tracking-wider">Add-ons (+$0.75)</label>
+                                            <label 
+                                                htmlFor={`addon-select-${product.id}`}
+                                                className="text-xs font-semibold text-amber-100/50 uppercase tracking-wider"
+                                            >
+                                                Add-ons (+$0.75)
+                                            </label>
                                             <select 
+                                                id={`addon-select-${product.id}`}
                                                 value={selection.customization}
                                                 onChange={(e) => handleCustomizationChange(product.id, e.target.value)}
                                                 className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-3 py-2 text-amber-50 focus:outline-none focus:border-[#D4A574] text-sm"
