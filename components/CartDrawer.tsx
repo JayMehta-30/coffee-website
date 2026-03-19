@@ -64,6 +64,7 @@ export default function CartDrawer() {
                             <button 
                                 onClick={() => setIsCartOpen(false)}
                                 className="p-2 rounded-lg text-amber-100/70 hover:text-white hover:bg-amber-900/30 transition-colors"
+                                aria-label="Close cart"
                             >
                                 <X className="w-6 h-6" />
                             </button>
@@ -104,6 +105,7 @@ export default function CartDrawer() {
                                                 <button 
                                                     onClick={() => removeFromCart(item.id)}
                                                     className="text-amber-100/40 hover:text-red-400 transition-colors"
+                                                    aria-label="Remove item"
                                                 >
                                                     <Trash2 className="w-4 h-4" />
                                                 </button>
@@ -115,6 +117,7 @@ export default function CartDrawer() {
                                                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                                         className="p-1 rounded text-amber-100/70 hover:text-white hover:bg-amber-900/30 disabled:opacity-50"
                                                         disabled={item.quantity <= 1}
+                                                        aria-label="Decrease quantity"
                                                     >
                                                         <Minus className="w-3 h-3" />
                                                     </button>
@@ -122,6 +125,7 @@ export default function CartDrawer() {
                                                     <button 
                                                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                                         className="p-1 rounded text-amber-100/70 hover:text-white hover:bg-amber-900/30"
+                                                        aria-label="Increase quantity"
                                                     >
                                                         <Plus className="w-3 h-3" />
                                                     </button>
