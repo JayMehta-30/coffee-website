@@ -102,7 +102,7 @@ export default function TakeawayPage() {
                                         <div className="space-y-2">
                                             <label 
                                                 htmlFor={`size-select-${product.id}`}
-                                                className="text-xs font-semibold text-amber-100/50 uppercase tracking-wider"
+                                                className="text-xs font-semibold text-amber-100/80 uppercase tracking-wider"
                                             >
                                                 Size
                                             </label>
@@ -120,7 +120,7 @@ export default function TakeawayPage() {
                                         <div className="space-y-2">
                                             <label 
                                                 htmlFor={`addon-select-${product.id}`}
-                                                className="text-xs font-semibold text-amber-100/50 uppercase tracking-wider"
+                                                className="text-xs font-semibold text-amber-100/80 uppercase tracking-wider"
                                             >
                                                 Add-ons (+$0.75)
                                             </label>
