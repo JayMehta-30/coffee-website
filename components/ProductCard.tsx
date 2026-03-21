@@ -54,9 +54,9 @@ export default function ProductCard({ product, index }: ProductCardProps) {
                     whileHover={{ scale: 1.1, rotate: 90 }}
                     whileTap={{ scale: 0.9 }}
                     className="w-12 h-12 rounded-full bg-gradient-to-br from-[#4F9C8F] to-[#3D8B7F] flex items-center justify-center hover:shadow-lg hover:shadow-[#4F9C8F]/40 transition-shadow"
-                    aria-label={`Order ${product.name}`}
                 >
-                    <span className="text-white text-2xl font-bold">+</span>
+                    <span className="sr-only">Order {product.name}</span>
+                    <span className="text-white text-2xl font-bold" aria-hidden="true">+</span>
                 </motion.button>
             </div>
         </motion.div>

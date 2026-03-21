@@ -64,9 +64,9 @@ export default function CartDrawer() {
                             <button 
                                 onClick={() => setIsCartOpen(false)}
                                 className="p-2 rounded-lg text-amber-100/70 hover:text-white hover:bg-amber-900/30 transition-colors"
-                                aria-label="Close cart"
                             >
-                                <X className="w-6 h-6" />
+                                <span className="sr-only">Close cart</span>
+                                <X className="w-6 h-6" aria-hidden="true" />
                             </button>
                         </div>
 
@@ -105,9 +105,9 @@ export default function CartDrawer() {
                                                 <button 
                                                     onClick={() => removeFromCart(item.id)}
                                                     className="text-amber-100/40 hover:text-red-400 transition-colors"
-                                                    aria-label="Remove item"
                                                 >
-                                                    <Trash2 className="w-4 h-4" />
+                                                    <span className="sr-only">Remove item</span>
+                                                    <Trash2 className="w-4 h-4" aria-hidden="true" />
                                                 </button>
                                             </div>
                                             
@@ -117,17 +117,17 @@ export default function CartDrawer() {
                                                         onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                                         className="p-1 rounded text-amber-100/70 hover:text-white hover:bg-amber-900/30 disabled:opacity-50"
                                                         disabled={item.quantity <= 1}
-                                                        aria-label="Decrease quantity"
                                                     >
-                                                        <Minus className="w-3 h-3" />
+                                                        <span className="sr-only">Decrease quantity</span>
+                                                        <Minus className="w-3 h-3" aria-hidden="true" />
                                                     </button>
                                                     <span className="text-sm font-medium w-4 text-center">{item.quantity}</span>
                                                     <button 
                                                         onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                                         className="p-1 rounded text-amber-100/70 hover:text-white hover:bg-amber-900/30"
-                                                        aria-label="Increase quantity"
                                                     >
-                                                        <Plus className="w-3 h-3" />
+                                                        <span className="sr-only">Increase quantity</span>
+                                                        <Plus className="w-3 h-3" aria-hidden="true" />
                                                     </button>
                                                 </div>
                                                 <span className="font-semibold text-[#D4A574]">

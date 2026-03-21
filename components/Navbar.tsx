@@ -55,16 +55,15 @@ export default function Navbar() {
                                 );
                             })}
                             
-                            {/* Cart Icon */}
                             <button 
                                 onClick={() => setIsCartOpen(true)}
                                 className="relative p-2 text-amber-100/70 hover:text-white transition-colors group"
-                                aria-label="Open cart"
                             >
-                                <ShoppingBag className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                <span className="sr-only">Open cart</span>
+                                <ShoppingBag className="w-5 h-5 group-hover:scale-110 transition-transform" aria-hidden="true" />
                                 {totalItems > 0 && (
                                     <span className="absolute top-0 right-0 bg-[#D4A574] text-[#1A0F0A] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center transform translate-x-1/4 -translate-y-1/4">
-                                        {totalItems}
+                                        <span className="sr-only">Items in cart: </span>{totalItems}
                                     </span>
                                 )}
                             </button>
@@ -76,12 +75,12 @@ export default function Navbar() {
                         <button 
                             onClick={() => setIsCartOpen(true)}
                             className="relative p-2 text-amber-100/70 hover:text-white transition-colors"
-                            aria-label="Open cart"
                         >
-                            <ShoppingBag className="w-6 h-6" />
+                            <span className="sr-only">Open cart</span>
+                            <ShoppingBag className="w-6 h-6" aria-hidden="true" />
                             {totalItems > 0 && (
                                 <span className="absolute top-0 right-0 bg-[#D4A574] text-[#1A0F0A] text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center transform translate-x-1/4 -translate-y-1/4">
-                                    {totalItems}
+                                    <span className="sr-only">Items in cart: </span>{totalItems}
                                 </span>
                             )}
                         </button>
