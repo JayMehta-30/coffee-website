@@ -18,9 +18,18 @@ export default function Footer() {
                             Serving the finest artisanal coffee blends. Where every sip defies gravity and elevates your day.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="hover:text-[#D4A574] transition-colors"><Instagram className="h-5 w-5" /></a>
-                            <a href="#" className="hover:text-[#D4A574] transition-colors"><Twitter className="h-5 w-5" /></a>
-                            <a href="#" className="hover:text-[#D4A574] transition-colors"><Facebook className="h-5 w-5" /></a>
+                            <a href="#" className="hover:text-[#D4A574] transition-colors">
+                                <span className="sr-only">Instagram</span>
+                                <Instagram className="h-5 w-5" aria-hidden="true" />
+                            </a>
+                            <a href="#" className="hover:text-[#D4A574] transition-colors">
+                                <span className="sr-only">Twitter</span>
+                                <Twitter className="h-5 w-5" aria-hidden="true" />
+                            </a>
+                            <a href="#" className="hover:text-[#D4A574] transition-colors">
+                                <span className="sr-only">Facebook</span>
+                                <Facebook className="h-5 w-5" aria-hidden="true" />
+                            </a>
                         </div>
                     </div>
 
