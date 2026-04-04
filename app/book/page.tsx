@@ -131,32 +131,32 @@ export default function BookPage() {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80">Full Name</label>
-                                        <input required type="text" name="name" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
+                                        <label htmlFor="table-name" className="text-sm font-medium text-amber-100/80">Full Name</label>
+                                        <input id="table-name" required type="text" name="name" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80">Email Address</label>
-                                        <input required type="email" name="email" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
+                                        <label htmlFor="table-email" className="text-sm font-medium text-amber-100/80">Email Address</label>
+                                        <input id="table-email" required type="email" name="email" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
                                     </div>
                                     
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
+                                        <label htmlFor="table-date" className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
                                             <Calendar className="w-4 h-4 text-[#D4A574]" /> Date
                                         </label>
-                                        <input required type="date" name="date" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574] [color-scheme:dark]" />
+                                        <input id="table-date" required type="date" name="date" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574] [color-scheme:dark]" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
+                                        <label htmlFor="table-time" className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
                                             <Clock className="w-4 h-4 text-[#D4A574]" /> Time
                                         </label>
-                                        <input required type="time" name="time" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574] [color-scheme:dark]" />
+                                        <input id="table-time" required type="time" name="time" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574] [color-scheme:dark]" />
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
+                                        <label htmlFor="table-guests" className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
                                             <Users className="w-4 h-4 text-[#D4A574]" /> Number of Guests
                                         </label>
-                                        <select required name="guests" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]">
+                                        <select id="table-guests" required name="guests" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]">
                                             <option value="1">1 Person</option>
                                             <option value="2">2 People</option>
                                             <option value="3">3 People</option>
@@ -165,8 +165,8 @@ export default function BookPage() {
                                         </select>
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80">Special Requests</label>
-                                        <input type="text" name="requests" placeholder="Optional" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
+                                        <label htmlFor="table-requests" className="text-sm font-medium text-amber-100/80">Special Requests</label>
+                                        <input id="table-requests" type="text" name="requests" placeholder="Optional" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
                                     </div>
                                 </div>
 
@@ -190,19 +190,19 @@ export default function BookPage() {
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80">Full Name</label>
-                                        <input required type="text" name="name" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
+                                        <label htmlFor="order-name" className="text-sm font-medium text-amber-100/80">Full Name</label>
+                                        <input id="order-name" required type="text" name="name" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
                                     </div>
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80">Email Address</label>
-                                        <input required type="email" name="email" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
+                                        <label htmlFor="order-email" className="text-sm font-medium text-amber-100/80">Email Address</label>
+                                        <input id="order-email" required type="email" name="email" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
                                     </div>
                                     
                                     <div className="space-y-2 md:col-span-2">
-                                        <label className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
+                                        <label htmlFor="order-coffee" className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
                                             <Coffee className="w-4 h-4 text-[#D4A574]" /> Select Coffee
                                         </label>
-                                        <select required name="coffee" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]">
+                                        <select id="order-coffee" required name="coffee" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]">
                                             <option value="">Choose a blend...</option>
                                             <option value="cappuccino">Anti-Gravity Cappuccino</option>
                                             <option value="latte">Cloud 9 Latte</option>
@@ -213,15 +213,15 @@ export default function BookPage() {
                                     </div>
 
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
+                                        <label htmlFor="order-pickup" className="text-sm font-medium text-amber-100/80 flex items-center gap-2">
                                             <Clock className="w-4 h-4 text-[#D4A574]" /> Pickup Time today
                                         </label>
-                                        <input required type="time" name="pickupTime" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574] [color-scheme:dark]" />
+                                        <input id="order-pickup" required type="time" name="pickupTime" className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574] [color-scheme:dark]" />
                                     </div>
                                     
                                     <div className="space-y-2">
-                                        <label className="text-sm font-medium text-amber-100/80">Customizations</label>
-                                        <input type="text" name="customizations" placeholder="Extra shot, oat milk, etc." className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
+                                        <label htmlFor="order-customizations" className="text-sm font-medium text-amber-100/80">Customizations</label>
+                                        <input id="order-customizations" type="text" name="customizations" placeholder="Extra shot, oat milk, etc." className="w-full bg-[#1A0F0A] border border-amber-900/50 rounded-lg px-4 py-3 text-amber-50 focus:outline-none focus:border-[#D4A574] focus:ring-1 focus:ring-[#D4A574]" />
                                     </div>
                                 </div>
 
